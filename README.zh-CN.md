@@ -2,18 +2,21 @@
 
 # 💬 dating-coach · 恋爱教练
 
-### 每一条建议，都有研究和数据撑腰的恋爱教练
+### 你的撩人技巧，经过论文审稿。
 
 **一个 Claude Code 技能：告诉你微信该回什么、什么时候约、什么时候该放手，而且每条规则都给过研究打分。**
 
 **🌐 [English](README.md) · 中文**
 
 [![Claude Code Skill](https://img.shields.io/badge/Claude%20Code-skill-d97757?style=for-the-badge)](https://docs.claude.com/en/docs/claude-code/skills)
+[![盲测](https://img.shields.io/badge/盲测-16局胜15-2c6a3c?style=for-the-badge)](benchmark/README.md)
 [![引用研究](https://img.shields.io/badge/引用研究-26篇-2c6a3c?style=for-the-badge)](references/zh/evidence.md)
 [![流行说法打分](https://img.shields.io/badge/流行说法打分-20条-8f6200?style=for-the-badge)](#-20-条流行说法研究打分)
 [![零套路](https://img.shields.io/badge/操控套路-0%25-b0322a?style=for-the-badge)](#-它不会教你的东西)
 [![LINUX DO](https://img.shields.io/badge/LINUX-DO-FFB003?style=for-the-badge)](https://linux.do)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue?style=for-the-badge)](LICENSE)
+
+<img src="assets/hero_zh.png" alt="dating-coach 回答：第二次约会前要不要找她聊？" width="820">
 
 </div>
 
@@ -25,23 +28,34 @@
 
 最后，它变成一个会直接告诉你**下一句发什么**的教练。
 
-## ⚡ 实际效果
-
-> **你：** 第一次约会挺顺的，第二次约在下周六了。这一周我要不要找她聊？还是等她先找我？
-
-> **dating-coach：** 要聊，但轻一点。别憋着等她，也别一整天黏着聊。
->
-> **今晚或明天：** 发一条短的，带上约会里的一个梗：
-> > 今天挺开心的，你那个[某个观点]我到现在还在笑 😂
->
-> **周中：** 轻轻聊一两次，聊得正开心的时候你先收（高点撤离）。
-> **周四/周五：** 确认时间地点，顺手发个定位。计划由你来定。
->
-> **她话多 →** 你也可以多聊点。**她话少 →** 保持轻松。**没回 →** 千万别连发。
->
-> **别再故意晚回了。** 不确定感只在刚认识时有点用。约会顺利、她也答应了第二次，这时候再玩欲擒故纵，只会让她觉得你冷了 *(Whitchurch 等, 2011; Montoya & Insko, 2008)*。
-
 每个回答都是同一个结构：**结论 → 计划 → 用你自己的语气写好、可直接复制的消息 → 她不同反应时你分别怎么做**。
+
+## 🚀 安装
+
+**Claude Code**（一行搞定）：
+
+```bash
+git clone https://github.com/nelonmelons/dating-coach-skill.git ~/.claude/skills/dating-coach
+```
+
+**claude.ai / Claude 桌面版：** 在 [Releases](https://github.com/nelonmelons/dating-coach-skill/releases/latest) 下载 `dating-coach.zip`，在 Claude 的 **Skills** 设置里上传。
+
+之后直接问恋爱问题就会自动触发（也可以输入 `/dating-coach`）。**用中文问就用中文答**，话术是微信语境。
+
+## 🧪 真的有用吗？盲测结果
+
+8 个真实的恋爱问题，让全新的 Claude 各回答两次：一次**用**这个技能，一次**不用**。再让两个独立评委（Claude Opus 和 Sonnet）给匿名、随机排序的回答打分，评委不知道哪个用了技能。
+
+| | dating-coach | 原版 Claude |
+|---|---|---|
+| **盲测胜场** | **15 / 16** | 1 / 16 |
+| 可执行性（满分 10） | **9.0** | 7.7 |
+| 像真人说话 | **8.4** | 7.8 |
+| 贴合具体情况 | **8.5** | 8.1 |
+| 准确性 | 8.75 | 8.5 |
+| 尊重与安全 | 9.0 | 9.1 |
+
+差距主要在**可执行性**：原版 Claude 的建议也算靠谱，但 dating-coach 会直接告诉你发什么、什么时候发、对方不同反应时怎么接。样本小，评委也是 AI。题目、两组回答、盲测对照表和评分全部公开在 [`benchmark/`](benchmark/README.md)，包括它唯一输掉的那一局以及之后的修正。
 
 ## 🧠 和别的"恋爱话术"有什么不一样
 
@@ -133,15 +147,7 @@ flowchart LR
 
 所有文件都有中英两版，英文在 `references/`，中文在 `references/zh/`。
 
-## 🚀 安装
-
-```bash
-git clone https://github.com/nelonmelons/dating-coach-skill.git ~/.claude/skills/dating-coach
-```
-
-就这一步。之后你问恋爱、聊天、感情相关的问题，Claude Code 会自动调用它；也可以直接输入 `/dating-coach`。**用中文问就用中文答**，话术是微信语境，例子用的是奶茶、剧本杀、朋友圈。
-
-### 可以这样问
+## 💬 可以这样问
 
 - *"这是我们的聊天记录[粘贴]，她回得越来越慢了，我下一句发什么？"*
 - *"探探上聊了 4 天，怎么约她出来才不尴尬？"*

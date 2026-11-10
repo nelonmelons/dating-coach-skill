@@ -2,52 +2,64 @@
 
 # 💬 dating-coach
 
-### The dating coach that shows you the research behind every rule.
+### Your rizz, peer-reviewed.
 
-**A Claude Code skill: an evidence-graded dating coach that tells you exactly what to text, when to ask, and when to let go.**
+**A Claude Code skill that tells you exactly what to text, when to ask, and when to let go, with the research behind every rule.**
 
 **🌐 English · [中文](README.zh-CN.md)**
 
 [![Claude Code Skill](https://img.shields.io/badge/Claude%20Code-skill-d97757?style=for-the-badge)](https://docs.claude.com/en/docs/claude-code/skills)
+[![Blind test](https://img.shields.io/badge/blind%20test-15%2F16%20wins-2c6a3c?style=for-the-badge)](benchmark/README.md)
 [![Studies cited](https://img.shields.io/badge/published%20studies-26-2c6a3c?style=for-the-badge)](references/evidence.md)
-[![Claims graded](https://img.shields.io/badge/folk%20claims%20graded-20-8f6200?style=for-the-badge)](#-the-evidence-table)
+[![Claims graded](https://img.shields.io/badge/dating%20claims%20graded-20-8f6200?style=for-the-badge)](#-the-evidence-table)
 [![Consent first](https://img.shields.io/badge/manipulation-0%25-b0322a?style=for-the-badge)](#-what-it-wont-do)
-[![LINUX DO](https://img.shields.io/badge/LINUX-DO-FFB003?style=for-the-badge)](https://linux.do)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue?style=for-the-badge)](LICENSE)
+
+<img src="assets/hero.png" alt="dating-coach answering: should I text her before our second date?" width="820">
 
 </div>
 
 ---
 
-Most dating advice is either **vibes** ("just be confident bro") or **manipulation** ("neg her, then go cold for three days"). This skill is neither.
+Most dating advice is either **vibes** ("just be confident bro") or **manipulation** ("neg her, then go cold for three days"). This is neither.
 
-It distils **16+ hours of transcribed real-world coaching** (street approaches, date breakdowns, chat-log teardowns) into one structured method. Then it checks that method against the research. **20 popular dating claims are graded against 26 published studies**: 8 supported, 6 mixed, 5 contradicted, 1 untested. It keeps what holds up, drops what doesn't, and swaps every manipulative tactic for an honest move that does the same job.
+**16+ hours of transcribed real-world coaching** (street approaches, date breakdowns, chat-log teardowns) distilled into one method, then checked against the research: **20 popular dating claims graded against 26 published studies**. Keep what holds up, drop what doesn't, and replace every manipulative tactic with an honest move that does the same job.
 
-Then it turns all of that into a coach that gives you **actual words to send**.
+Every answer has the same shape: **verdict → plan → copy-paste messages in your own voice → what to do depending on their reply**.
 
-## ⚡ See it work
+## 🚀 Install
 
-> **You:** first date went well, we set the second one for next saturday. should i text her during the week or wait for her to reach out?
+**Claude Code** (one line):
 
-> **dating-coach:** Text her, but lightly. Don't go quiet waiting, and don't chat all day either.
->
-> **Tonight/tomorrow:** one short warm text with a callback to the date:
-> > had a really good time. still not over your take on [X] 😂
->
-> **Midweek:** one or two light check-ins. End them while they're fun.
-> **Thu/Fri:** confirm time and place with a pin. You lead the plan.
->
-> **If she's chatty →** match her a bit more. **If she's quieter →** stay light. **Unanswered →** never double-text.
->
-> **Skip the deliberate reply delays.** Uncertainty helps only at the very start. After a good date and a yes to date two, playing hard to get reads as losing interest *(Whitchurch et al., 2011; Montoya & Insko, 2008)*.
+```bash
+git clone https://github.com/nelonmelons/dating-coach-skill.git ~/.claude/skills/dating-coach
+```
 
-Every answer has the same shape: **a verdict → the plan → copy-paste messages in your own voice → what to do depending on her reply**.
+**claude.ai / Claude desktop:** download `dating-coach.zip` from [Releases](https://github.com/nelonmelons/dating-coach-skill/releases/latest) and upload it in Claude's **Skills** settings.
+
+Then just ask a dating question; it triggers automatically (or type `/dating-coach`). Ask in **中文** and you get WeChat-native scripts.
+
+## 🧪 Does it actually help? A blind test
+
+8 realistic dating questions, answered twice by fresh Claude agents: once **with** this skill and once **without**. Two independent judges (Claude Opus and Sonnet) scored each anonymised, randomly ordered pair without knowing which was which.
+
+| | dating-coach | plain Claude |
+|---|---|---|
+| **Blind wins** | **15 / 16** | 1 / 16 |
+| Actionable (avg /10) | **9.0** | 7.7 |
+| Sounds natural | **8.4** | 7.8 |
+| Fits the situation | **8.5** | 8.1 |
+| Accurate | 8.75 | 8.5 |
+| Ethical & safe | 9.0 | 9.1 |
+
+The difference is mostly **actionability**: plain Claude gives sensible advice; dating-coach tells you what to send, when, and what to do depending on how they reply. Small sample, LLM judges. Prompts, both answer sets, the blinding key and the judges' scores are all in [`benchmark/`](benchmark/README.md), including the one case it lost and what was fixed.
 
 ## 🧠 Why it's different
 
 | | Typical "rizz" bots | **dating-coach** |
 |---|---|---|
 | Basis | Vibes, one guru's opinion | Field method **+ 26 published studies**, every claim graded |
+| Proof | "Trust me bro" | **Blind-tested** against plain Claude, all data published |
 | Output | 5 generic pickup lines | Diagnosis, the plan, **messages in your voice**, next steps for each kind of reply |
 | Handles "she went quiet" | "Send another text!" | A **three-step exit plan** with clear triggers and graceful-close scripts |
 | Hard-to-get / hot-and-cold | Taught as gospel | Modelled formally: works **only at the start** and only as one cool-to-warm arc |
@@ -109,7 +121,8 @@ flowchart LR
 
 ## 🧮 The models behind the rules
 
-The skill doesn't just assert rules. It knows *when* they're optimal, from simple formal models:
+<details>
+<summary><b>Six simple models that say <i>when</i> each rule is optimal</b> (click to expand)</summary>
 
 - **Reply timing has a sweet spot.** Delay signals that you have a life; responsiveness builds closeness. The trade-off `U(τ) = v(1−e^{−τ/a}) + r·e^{−τ/b}` has an interior optimum, so "match their pace" is the practical rule, not "wait 3 hours".
 - **Soft invite first.** If a refused direct invite makes later yeses less likely, a cheap soft probe ("we should… sometime") is the optimal first move once refusals are sticky enough.
@@ -118,7 +131,12 @@ The skill doesn't just assert rules. It knows *when* they're optimal, from simpl
 - **80/20/0 money rule.** When early gifts raise someone's other options more than their satisfaction, the best spend on gifts is zero. Spend on yourself and shared experiences instead.
 - **Why "no" must count.** If every answer is read as interest, the reading carries zero information. Basic probability says treat "no" as evidence, and consent says treat it as final.
 
+</details>
+
 ## 📦 What's inside
+
+<details>
+<summary><b>8 reference files + Chinese edition</b> (click to expand)</summary>
 
 | File | What it covers |
 |---|---|
@@ -130,16 +148,13 @@ The skill doesn't just assert rules. It knows *when* they're optimal, from simpl
 | [`relationship.md`](references/relationship.md) | Conflict repair, "you never make time for me", long-term milestones |
 | [`evidence.md`](references/evidence.md) | The graded claims and the models above |
 | [`catalog.md`](references/catalog.md) | **470 lines** covering every technique, signal, script and rule of thumb, each tagged by evidence and ethics |
+| [`benchmark/`](benchmark/README.md) | The blind test: prompts, both answer sets, judges' scores |
 
-## 🚀 Install
+Every reference file also exists in Chinese under `references/zh/`.
 
-```bash
-git clone https://github.com/nelonmelons/dating-coach-skill.git ~/.claude/skills/dating-coach
-```
+</details>
 
-That's it. Claude Code picks it up automatically whenever you ask for dating, texting or relationship advice. You can also call it directly with `/dating-coach`. It works in English and **中文**: ask in Chinese and you get WeChat-native scripts from `references/zh/`.
-
-### Things to ask it
+## 💬 Things to ask it
 
 - *"here's our chat [paste]. she's replying slower. what do i send?"*
 - *"how do i ask her out without it being weird? we've talked for 4 days on hinge"*

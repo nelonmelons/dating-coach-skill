@@ -1,0 +1,112 @@
+{
+ "opus": {
+  "wins": {
+   "SKILL": 7,
+   "PLAIN": 1,
+   "tie": 0
+  },
+  "per": [
+   [
+    1,
+    "SKILL"
+   ],
+   [
+    2,
+    "SKILL"
+   ],
+   [
+    3,
+    "SKILL"
+   ],
+   [
+    4,
+    "SKILL"
+   ],
+   [
+    5,
+    "SKILL"
+   ],
+   [
+    6,
+    "SKILL"
+   ],
+   [
+    7,
+    "SKILL"
+   ],
+   [
+    8,
+    "PLAIN"
+   ]
+  ],
+  "skill": {
+   "actionable": 9.0,
+   "accurate": 8.5,
+   "fit": 8.5,
+   "ethical": 8.88,
+   "natural": 8.38
+  },
+  "plain": {
+   "actionable": 7.75,
+   "accurate": 8.5,
+   "fit": 8.0,
+   "ethical": 9.12,
+   "natural": 7.75
+  }
+ },
+ "sonnet": {
+  "wins": {
+   "SKILL": 8,
+   "PLAIN": 0,
+   "tie": 0
+  },
+  "per": [
+   [
+    1,
+    "SKILL"
+   ],
+   [
+    2,
+    "SKILL"
+   ],
+   [
+    3,
+    "SKILL"
+   ],
+   [
+    4,
+    "SKILL"
+   ],
+   [
+    5,
+    "SKILL"
+   ],
+   [
+    6,
+    "SKILL"
+   ],
+   [
+    7,
+    "SKILL"
+   ],
+   [
+    8,
+    "SKILL"
+   ]
+  ],
+  "skill": {
+   "actionable": 9.0,
+   "accurate": 9.0,
+   "fit": 8.5,
+   "ethical": 9.12,
+   "natural": 8.38
+  },
+  "plain": {
+   "actionable": 7.62,
+   "accurate": 8.5,
+   "fit": 8.12,
+   "ethical": 9.12,
+   "natural": 7.88
+  }
+ }
+}
