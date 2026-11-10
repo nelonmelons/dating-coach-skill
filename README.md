@@ -6,10 +6,14 @@
 
 **A Claude Code skill: an evidence-graded dating coach that tells you exactly what to text, when to ask, and when to let go.**
 
+**🌐 English · [中文](README.zh-CN.md)**
+
 [![Claude Code Skill](https://img.shields.io/badge/Claude%20Code-skill-d97757?style=for-the-badge)](https://docs.claude.com/en/docs/claude-code/skills)
 [![Studies cited](https://img.shields.io/badge/published%20studies-26-2c6a3c?style=for-the-badge)](references/evidence.md)
 [![Claims graded](https://img.shields.io/badge/folk%20claims%20graded-20-8f6200?style=for-the-badge)](#-the-evidence-table)
 [![Consent first](https://img.shields.io/badge/manipulation-0%25-b0322a?style=for-the-badge)](#-what-it-wont-do)
+[![LINUX DO](https://img.shields.io/badge/LINUX-DO-FFB003?style=for-the-badge)](https://linux.do)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue?style=for-the-badge)](LICENSE)
 
 </div>
 
@@ -133,7 +137,7 @@ The skill doesn't just assert rules. It knows *when* they're optimal, from simpl
 git clone https://github.com/nelonmelons/dating-coach-skill.git ~/.claude/skills/dating-coach
 ```
 
-That's it. Claude Code picks it up automatically whenever you ask for dating, texting or relationship advice. You can also call it directly with `/dating-coach`.
+That's it. Claude Code picks it up automatically whenever you ask for dating, texting or relationship advice. You can also call it directly with `/dating-coach`. It works in English and **中文**: ask in Chinese and you get WeChat-native scripts from `references/zh/`.
 
 ### Things to ask it
 
